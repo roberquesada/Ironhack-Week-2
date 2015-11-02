@@ -14,19 +14,24 @@ end
 
 
 RSpec.describe "String calculator" do
+
+  before :each do
+    @calculator = StringCalc.new
+  end
+
   it "returns 0 for the empty string" do
-    expect(StringCalc.new.add("")).to eq(0)
+    expect(@calculator.add("")).to eq(0)
   end
 
   it "returns 1 for only that number" do
-    expect(StringCalc.new.add("1")).to eq(1)
+    expect(@calculator.add("1")).to eq(1)
   end
 
   it "returns 1 for only that number" do
-    expect(StringCalc.new.add("1\n2")).to eq(3)
+    expect(@calculator.add("1\n2")).to eq(3)
   end
 
   it "returns 1 for only that number" do
-    expect(StringCalc.new.add("1\n2,2")).to eq(5)
+    expect(@calculator.add("1\n2,2")).to eq(5)
   end
 end
