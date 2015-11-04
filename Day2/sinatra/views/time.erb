@@ -1,0 +1,13 @@
+<div id="time">
+  
+</div>
+
+<script type="text/javascript">
+  date = new Date
+  setInterval(function(){
+    date = new Date
+    eleTime = document.getElementById('time')
+    time = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds()
+    eleTime.innerHTML = time
+  }, 1000)
+</script>
