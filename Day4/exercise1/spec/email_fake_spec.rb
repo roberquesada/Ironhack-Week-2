@@ -23,13 +23,13 @@ describe WordChecker do
       expect(counter.check(["subject"])).to eq(true)
     end
 
-   it "should return false when a word is included in a subject and word given is diferent " do
+   it "should return false when a word is included in a subject and word given is different " do
       provider = instance_double('EmailProviderFake', :get_subjects => ["subject hello"] )
       counter = WordChecker.new(provider)
       expect(counter.check(["hello"])).to eq(true)
     end
 
-    xit "should return false when a two words are included in a subject and word given is diferent " do
+    xit "should return false when a two words are included in a subject and word given is different " do
       provider = instance_double('EmailProviderFake', :get_subjects => ["subject", "test"] )
       counter = WordChecker.new(provider)
       expect(counter.check(["hello",])).to eq(false)
